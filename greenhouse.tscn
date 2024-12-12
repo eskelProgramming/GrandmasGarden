@@ -1,10 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://qonjwxv7wcb"]
+[gd_scene load_steps=7 format=3 uid="uid://qonjwxv7wcb"]
 
-[ext_resource type="Texture2D" uid="uid://dvtkxwf8rgswr" path="res://images/background.png" id="1_hi478"]
+[ext_resource type="Texture2D" uid="uid://dvtkxwf8rgswr" path="res://backgrounds/background.png" id="1_hi478"]
+[ext_resource type="Script" path="res://medium_pot.gd" id="2_ypmh5"]
+[ext_resource type="Texture2D" uid="uid://pr3bfexyk6oi" path="res://pots/medium-pot.png" id="3_l1sca"]
+[ext_resource type="Texture2D" uid="uid://eu2ahin47ymn" path="res://plants/sunflower/sunflower-seed.png" id="4_xrvaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h005"]
+size = Vector2(117, 82)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ft5u"]
+radius = 16.2788
 
 [node name="greenhouse" type="Node2D"]
 
 [node name="greenhouse-background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1280.0
+offset_bottom = 720.0
 texture = ExtResource("1_hi478")
+
+[node name="medium-pot" type="CharacterBody2D" parent="."]
+position = Vector2(184, 311)
+motion_mode = 1
+script = ExtResource("2_ypmh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="medium-pot"]
+position = Vector2(60, 41)
+shape = SubResource("RectangleShape2D_5h005")
+
+[node name="Sprite2D" type="Sprite2D" parent="medium-pot"]
+position = Vector2(60, 38)
+texture = ExtResource("3_l1sca")
+
+[node name="sunflower" type="CharacterBody2D" parent="."]
+position = Vector2(282, 339)
+
+[node name="Sprite2D" type="Sprite2D" parent="sunflower"]
+position = Vector2(77, 38)
+texture = ExtResource("4_xrvaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sunflower"]
+position = Vector2(77, 39)
+shape = SubResource("CircleShape2D_8ft5u")
