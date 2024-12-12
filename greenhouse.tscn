@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qonjwxv7wcb"]
+
+[ext_resource type="Texture2D" uid="uid://dvtkxwf8rgswr" path="res://images/background.png" id="1_hi478"]
+
+[node name="greenhouse" type="Node2D"]
+
+[node name="greenhouse-background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hi478")
